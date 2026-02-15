@@ -1,48 +1,38 @@
-# Scope VFX Collection
+# Scope Dither
 
-A collection of visual effects plugins for Daydream Scope.
+Classic black and white dithering effect plugin for Daydream Scope.
 
-## Plugins
+## Features
 
-### 🔊 [noise-pre-vfx](./noise-pre-vfx)
-3D Simplex noise generator (pre-processor)
-- GPU-accelerated fractal noise with harmonics
-- Animation, seed, period, amplitude, offset, and exponent controls
-- Mix control for blending with input video
-- Inspired by TouchDesigner's Noise TOP
-
-### 🎨 [dither-post-vfx](./dither-post-vfx)
-Classic black and white dithering effect (post-processor)
-- GPU-accelerated ordered dithering using Bayer matrix
-- Adjustable threshold, dither size, spacing, and contrast
+- **GPU-accelerated** ordered dithering using Bayer matrix
+- **Adjustable threshold** for brightness control
+- **Configurable dither size** (2x2, 4x4, 8x8, 16x16)
+- **Spacing control** for pattern density
+- **Contrast adjustment** for punchier results
 
 ## Installation
 
-Each plugin can be installed independently:
-
 ```bash
-# Install dither effect
-cd dither-post-vfx
+# From GitHub
+uv run daydream-scope install https://github.com/YOUR_USERNAME/scope-dither
+
+# Local development (editable mode)
 uv run daydream-scope install -e .
 ```
 
-Or install from GitHub (when available):
-```bash
-uv run daydream-scope install https://github.com/andrwsun/scope-vfx/dither-post-vfx
-```
+## Parameters
 
-## Creating New Plugins
+- **Threshold** (0.0 - 1.0): Brightness cutoff between black and white
+- **Dither Size** (2 - 16): Size of the dithering pattern matrix
+- **Spacing** (0.5 - 4.0): Pattern spacing multiplier
+- **Contrast** (0.5 - 2.0): Contrast adjustment before dithering
 
-Each subfolder contains a complete Scope plugin with its own:
-- `pyproject.toml` - Plugin configuration
-- `src/` - Source code
-- `README.md` - Plugin-specific documentation
+## Requirements
 
-## Structure
+- Python 3.12+
+- Daydream Scope
+- PyTorch (provided by Scope)
 
-```
-scope vfx/
-├── noise-pre-vfx/            # 3D Simplex noise pre-processor
-├── dither-post-vfx/          # Dithering post-processor
-└── [your plugins here]/      # Add more plugins...
-```
+## License
+
+MIT
