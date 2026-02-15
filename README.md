@@ -4,6 +4,13 @@ A collection of visual effects plugins for Daydream Scope.
 
 ## Plugins
 
+### 🔊 [noise-pre-vfx](./noise-pre-vfx)
+3D Simplex noise generator (pre-processor)
+- GPU-accelerated fractal noise with harmonics
+- Animation, seed, period, amplitude, offset, and exponent controls
+- Mix control for blending with input video
+- Inspired by TouchDesigner's Noise TOP
+
 ### 🎨 [dither-post-vfx](./dither-post-vfx)
 Classic black and white dithering effect (post-processor)
 - GPU-accelerated ordered dithering using Bayer matrix
@@ -35,8 +42,7 @@ Each subfolder contains a complete Scope plugin with its own:
 
 ```
 scope vfx/
+├── noise-pre-vfx/            # 3D Simplex noise pre-processor
 ├── dither-post-vfx/          # Dithering post-processor
-├── test-pre-vfx1/            # Your pre-processor plugins
-├── test-post-vfx1/           # More post-processor plugins
-└── test-post-vfx2/           # And more...
+└── [your plugins here]/      # Add more plugins...
 ```
